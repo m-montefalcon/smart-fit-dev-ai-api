@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS", 
+    "moduleResolution": "node", 
+    "target": "ESNext", 
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./src",
@@ -19,7 +20,7 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "*": ["node_modules/*", "src/*"]
-    },
+    }
   },
   "include": [
     "src/**/*.ts",
@@ -29,6 +30,5 @@
     "node_modules",
     "**/*.spec.ts"
   ],
-  "compileOnSave": true,
-
+  "compileOnSave": true
 }
