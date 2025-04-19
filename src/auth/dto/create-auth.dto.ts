@@ -1,13 +1,14 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
 import { IsMatchPassword } from '../../validators/is-match-password.validator';
-interface CreateUserDtoInterface {
+
+interface CreateAuthDtoInterface {
   fullName: string;
   email: string;
   password: string;
   confirmPassword: string;
 }
 
-export class CreateUserDto implements CreateUserDtoInterface {
+export class CreateAuthDto implements CreateAuthDtoInterface {
   @IsString()
   @IsNotEmpty()
   fullName: string;

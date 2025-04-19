@@ -7,28 +7,29 @@ import {
 } from 'typeorm';
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
-@Entity()
+@Entity('users')
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @IsString()
   @IsNotEmpty()
+  @Column({ name: 'full_name' })
   fullName: string;
 
   @IsEmail()
   @IsNotEmpty()
-  @Column({ unique: true })
+  @Column({ unique: true, name: 'email' })
   email: string;
 
   @IsString()
   @IsNotEmpty()
-  @Column()
+  @Column({ name: 'password' })
   password: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 }
