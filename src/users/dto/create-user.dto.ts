@@ -1,5 +1,4 @@
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
-// import { IsEmailUnique } from '../../validators/is-email-unique.validator';
 import { IsMatchPassword } from '../../validators/is-match-password.validator';
 interface CreateUserDtoInterface {
   fullName: string;

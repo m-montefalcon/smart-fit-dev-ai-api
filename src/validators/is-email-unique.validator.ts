@@ -10,14 +10,9 @@ import { UsersService } from '../users/users.service';
 @ValidatorConstraint({ async: true })
 @Injectable()
 export class IsEmailUniqueValidator implements ValidatorConstraintInterface {
-  constructor(private readonly userService: UsersService) {
-    console.log('IsEmailUniqueValidator instantiated');
-  }
+  constructor(private readonly userService: UsersService) {}
 
   async validate(email: string): Promise<boolean> {
-    console.log('Validating email uniqueness:', email);
-    console.log('UsersService during validation:', this.userService);
-
     const user = await this.userService.findByEmail(email);
     return !user; // If no user is found, the email is unique
   }
