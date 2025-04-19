@@ -16,7 +16,7 @@ export class AuthService {
     private readonly passwordService: PasswordService,
   ) {}
 
-  async register(createAuthDto: CreateAuthDto) {
+  async register(createAuthDto: CreateAuthDto): Promise<string> {
     const { fullName, email, password } = createAuthDto;
     const uniqueEmail = await this.isEmailUnique(email);
     if (!uniqueEmail) {

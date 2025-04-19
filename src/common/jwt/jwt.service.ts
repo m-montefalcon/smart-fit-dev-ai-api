@@ -9,7 +9,7 @@ export class JwtService {
   createToken(payload: JwtPayloadInterface): string {
     return this.jwtService.sign(payload, {
       secret: process.env.JWT_SECRET || 'defaultSecret',
-      expiresIn: process.env.JWT_EXPIRATION || '1h',
+      expiresIn: process.env.JWT_EXPIRATION || '6h',
     });
   }
 
